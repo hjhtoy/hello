@@ -1,8 +1,6 @@
 package main
 
-import (
-	"hello/Struct"
-)
+import "hello/Lock"
 
 var m = 100
 
@@ -23,23 +21,32 @@ const (
 
 func main() {
 	//sayhi.Sayhi()
-	//
+
 	////切片
 	//Slice.Test()
-	//
-	//面向对象
+
+	////面向对象
 	//oop.Test()
-	//
+
 	////Map
 	//Map.Test()
-	////
-	//////函数
+
+	////函数
 	//Function.Test()
-	//
+
 	////指针
 	//Pointer.Test()
 
-	//
 	////结构体
-	Struct.Test()
+	//Struct.Test()
+
+	////接口
+	//Interface.Test()
+
+	////goroutine
+	//Goroutine.Test()
+
+	//线程安全和锁
+	Lock.Test()
 }
+

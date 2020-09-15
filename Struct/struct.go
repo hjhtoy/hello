@@ -25,6 +25,9 @@ func NewCat(name string, age int, color string, hobby string) *Cat {
 	return &Cat{Name: name, Age: age, Color: color, Hobby: hobby}
 }
 
+func init(){
+	fmt.Println("这里是结构体测试包......")
+}
 func Test() {
 	//var cat1 = Cat{
 	//	Name:  "小白",
@@ -93,7 +96,7 @@ func Test() {
 	//newP := newPerson("张三", "北京", 23)
 	//newP.Dream()
 
-	//JSON序列化
+	//JSON序列化 (可系列化的字段必须是public)
 	c1 := make([]*class, 0, 10)
 	c1 = append(c1, &class{
 		title: "一班1",
@@ -151,8 +154,22 @@ func Test() {
 		return
 	}
 	fmt.Printf("new json:%s\n", data)
+
+	pp := personNew{
+		Name: "张三",
+		City: "北京",
+		age:  15,
+	}
+	pData, _ := json.Marshal(pp)
+	fmt.Println(pp)
+	fmt.Printf("new person json:%s\n", pData)
 }
 
+type personNew struct {
+	Name string		`json:"FullName"`
+	City string		`json:"LivingCity"`
+	age  int		//私有字段不能被json包访问
+}
 type class struct {
 	title    string
 	students []*student
@@ -188,4 +205,8 @@ func addAge1(p person) {
 }
 func addAge2(p *person) {
 	p.age += 12
+}
+
+func AddNew(a, b int) int {
+	return a + b
 }

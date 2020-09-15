@@ -52,3 +52,7 @@ func modify1(x int) {
 func modify2(x *int) {
 	*x += 100
 }
+
+func init(){
+	fmt.Println("这里是指针测试包......")
+}

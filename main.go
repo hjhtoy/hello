@@ -1,6 +1,6 @@
 package main
 
-import "hello/Lock"
+import "hello/Socket"
 
 var m = 100
 
@@ -25,9 +25,6 @@ func main() {
 	////切片
 	//Slice.Test()
 
-	////面向对象
-	//oop.Test()
-
 	////Map
 	//Map.Test()
 
@@ -46,7 +43,19 @@ func main() {
 	////goroutine
 	//Goroutine.Test()
 
-	//线程安全和锁
-	Lock.Test()
+	////线程安全和锁
+	//Lock.Test()
+
+	////并发和安全练习题
+	//GoroutineExercise.Test()
+
+	//网络
+	Socket.Test()
+
+
+
+
+	////面向对象
+	//oop.Test()
 }
 
